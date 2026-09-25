@@ -29,7 +29,9 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        //
+        $record=new Book();
+        $record->create($request->all());
+        return $record;
     }
 
     /**
@@ -37,7 +39,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return $book;
     }
 
     /**
@@ -53,7 +55,9 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
-        //
+        $record = Book::findorFail($book->id);
+        $record->update($request->all());
+        return $record;
     }
 
     /**
@@ -61,6 +65,6 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        return $record = Book::destroy($book->id);
     }
 }

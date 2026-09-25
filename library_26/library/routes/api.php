@@ -16,3 +16,12 @@ Route::put('/users/{user}', [UserController::class, 'update']);
 Route::post('/users', [UserController::class, 'store']);
 
 Route::delete('/users/{user}', [UserController::class, 'destroy']);
+
+//book routes
+Route::get('/books', [BookController::class, 'index']);
+Route::get('/books/{book}', [BookController::class, 'show']);
+Route::put('/books/{book}', [BookController::class, 'update']);
+
+Route::post('/books', [BookController::class, 'store']);
+
+Route::delete('/books/{book}', [BookController::class, 'destroy']);
